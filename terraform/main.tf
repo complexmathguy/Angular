@@ -129,7 +129,7 @@ resource "aws_instance" "web" {
 
   instance_type = "t2.medium"
   
-  tags { Name = "angular7demo instance" } 
+  tags = { Name = "angular7demo instance" } 
 
   # standard realmethods community AMI with docker pre-installed
   ami = "ami-05033408e5e831fb0"
