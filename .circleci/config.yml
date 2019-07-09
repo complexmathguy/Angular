@@ -73,7 +73,7 @@ jobs:
       - run: 'export GIT_COMMITTER_NAME=CircleCi'
       
      # install the Angular CLI
-      - run: 'sudo npm install -g @angular/cli > /dev/null'
+      - run: 'sudo npm install -g @angular/cli@7.2.3 > /dev/null'
 
       # create an appRoot directory to install into 
       - run: mkdir /home/circleci/appRoot
