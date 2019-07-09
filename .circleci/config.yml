@@ -70,7 +70,7 @@ jobs:
       - run: 'export NG_CLI_ANALYTICS=ci'
       
      # install the Angular CLI
-      - run: 'sudo npm install -g @angular/cli'
+      - run: 'sudo npm install -g @angular/cli > /dev/null'
 
       # create an appRoot directory to install into 
       - run: mkdir /home/circleci/appRoot
