@@ -20,7 +20,7 @@ save_repo: &save_repo
         - *working_directory
   
 base_terraform_image: &base_terraform_image
-  hashicorp/terraform:light
+  hashicorp/terraform:0.11.14
   
 terraform_config: &terraform_config
   docker:
