@@ -95,7 +95,7 @@ resource "aws_instance" "mongodb" {
 
   instance_type = "t2.micro"
   
-  tags { Name = "mongodb instance" } 
+  tags = { Name = "mongodb instance" } 
 
   # standard realmethods community image with mongo started on the default port 
   ami = "ami-0e2a167cf2e0ce6c0"
