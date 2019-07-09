@@ -91,6 +91,7 @@ resource "aws_instance" "mongodb" {
   connection {
     # The default username for our AMI
     user = "ubuntu"
+    host = "self.public_ip"
   }
 
   instance_type = "t2.micro"
@@ -125,6 +126,7 @@ resource "aws_instance" "web" {
   connection {
     # The default username for our AMI
     user = "ubuntu"
+    host = "self.public_ip"
  }
 
   instance_type = "t2.medium"
