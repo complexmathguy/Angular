@@ -83,6 +83,7 @@ jobs:
 
       # copy the application files from the working directory
       - run: cp -r -n /home/circleci/appRoot/angular7demo/ /home/circleci/gitRoot/
+      - run: ls /home/circleci/gitRoot/angular7demo/src
 
       # setup the application, copies generated app files to the project directory
       - run: cd /home/circleci/gitRoot/angular7demo && npm install --prod && npm run setup
