@@ -52,7 +52,7 @@ jobs:
     # mongodb image - runs in a common network where ports exposed
     #          on the primary container are available on localhost
     docker:
-      - image: circleci/node:8.12.0-jessie
+      - image: circleci/node:10.9.0-jessie
       - image: mongo:4.0.5
         command: [mongod, --smallfiles]
 
