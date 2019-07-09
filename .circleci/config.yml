@@ -68,6 +68,9 @@ jobs:
 
 # install the Angular CLI
       - run: 'export NG_CLI_ANALYTICS=ci'
+      - run: 'export EMAIL=circleci@circleci.com'
+      - run: 'export GIT_AUTHOR_NAME=CircleCi'
+      - run: 'export GIT_COMMITTER_NAME=CircleCi'
       
      # install the Angular CLI
       - run: 'sudo npm install -g @angular/cli > /dev/null'
