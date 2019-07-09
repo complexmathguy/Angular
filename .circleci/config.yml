@@ -67,6 +67,8 @@ jobs:
       - *restore_repo
 
 # install the Angular CLI
+      - run: 'export NG_CLI_ANALYTICS=ci'
+      
      # install the Angular CLI
       - run: 'sudo npm install -g @angular/cli'
 
