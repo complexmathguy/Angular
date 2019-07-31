@@ -1,0 +1,6 @@
+AngularDemo_Service:
+  build:
+    image: AngularDemo_Image
+    dockerfile: Dockerfile_For_CodeShip
+    add_docker: true
+  cached: true
