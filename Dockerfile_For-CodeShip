@@ -1,0 +1,26 @@
+FROM node:8.12
+
+# install the Angular CLI
+
+# assign vars for Git
+RUN 'export EMAIL=codeship@codeship.com'
+RUN 'export GIT_AUTHOR_NAME=CodeShip'
+RUN 'export GIT_COMMITTER_NAME=CodeShip'
+      
+# install the Angular CLI, pip to /dev/null to remove analytics invocation
+RUN 'sudo npm install -g @angular/cli@7.2.3 > /dev/null'
+
+# create an appRoot directory to install into 
+RUN mkdir /home/codeship/appRoot
+
+# create a new Angular project shell
+RUN cd /home/codeship/appRoot && ng new angular7demo --defaults
+
+# copy the application files from the working directory
+RUN cp -r -n /home/codeship/appRoot/angular7demo/ /home/codeship/gitRoot/
+
+# setup the application, copies generated app files to the project directory
+RUN cd /home/codeship/gitRoot/angular7demo && npm install --prod && npm run setup
+
+# perform the build into a directory called angular under the dist directory
+RUN cd /home/codeship/gitRoot/angular7demo && ng build #--base-href /angular7demo/
