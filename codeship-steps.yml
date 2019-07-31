@@ -1,12 +1,8 @@
-- type: parallel
-  name: example_parallel_step
+- type: serial
+  name: AngularDemo-CI-CD-Steps
   steps:
-    - service: codeship_example
-      command: printenv
-    - service: codeship_example
-      # shell wrapper not required unless passing along env vars or combining commands
-      command: /bin/bash -c 'ls && echo ${CI_BUILD_ID}'
-- name: example_tagged_step
-  tag: master
-  service: codeship_example
-  command: echo "Deploy here!"
+    - service: AngularDemo_Service
+      command: echo AngularDemo Angular setup complete
+- name: docker_steps
+  service: AngularDemo_Service
+  command: dockerbuild.sh
