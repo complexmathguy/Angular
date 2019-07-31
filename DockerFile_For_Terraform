@@ -1,0 +1,7 @@
+FROM hashicorp/terraform:0.10.5
+LABEL maintainer="dev, dev@dev.com"
+
+RUN mkdir -p /terraform
+WORKDIR /terraform
+
+COPY . ./
